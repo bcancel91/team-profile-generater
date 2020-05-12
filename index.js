@@ -1,13 +1,17 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
 
-let managerArray = []
+const Engineer = require("./Develop/lib/Engineer")
+const Manager = require("./Develop/lib/Manager")
+const Intern = require("./Develop/lib/Intern")
 
-let internArray = []
+let managerArray = [];
 
-let engineerArray = []
+let internArray = [];
 
-let statusSwitch = 1
+let engineerArray = [];
+
+let statusSwitch = 1;
 
 
 const prompts = async function(questions){
@@ -111,7 +115,7 @@ function generateHtml(){
        const managerHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
         <h3 style="text-align: center;">${managerArray[i].name}</h3>
-        <i class="fas fa-eye fa-4x d-flex justify-content-center"></i>
+        <i class="fas fa-address-card fa-4x d-flex justify-content-center"></i>
         <h5 style="text-align: center;">Manager</h5>
         </div>
         <div class="card-body bg-light text-dark">
@@ -123,7 +127,7 @@ function generateHtml(){
         </div>
         </div>`
 
-        fs.appendFile('output/team-profile.html', managerHtml, 'utf8', function (error) {
+        fs.appendFile('Develop/output/team-profile.html', managerHtml, 'utf8', function (error) {
             if (error) {
                 console.log(error)
             }
@@ -135,7 +139,7 @@ function generateHtml(){
         const engineerHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
         <h3 style="text-align: center;">${engineerArray[i].name}</h3>
-        <i class="fas fa-code fa-4x d-flex justify-content-center"></i>
+        <i class="fas fa-address-card fa-4x d-flex justify-content-center"></i>
         <h5 style="text-align: center;">Engineer</h5>
         </div>
         <div class="card-body bg-light text-dark">
@@ -147,7 +151,7 @@ function generateHtml(){
         </div>
         </div>`
 
-        fs.appendFile('output/team-profile.html', engineerHtml, 'utf8', function (error) {
+        fs.appendFile('Develop/output/team-profile.html', engineerHtml, 'utf8', function (error) {
             if (error) {
                 console.log(error)
             }
@@ -159,7 +163,7 @@ function generateHtml(){
         const internHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
         <h3 style="text-align: center;">${internArray[i].name}</h3>
-        <i class="fas fa-address-card fa-4x d-flex justify-content-center"></i>
+        <i class="fas fa-user-graduate fa-4x d-flex justify-content-center"></i>
         <h5 style="text-align: center;">Intern</h5>
         </div>
         <div class="card-body bg-light text-dark">
@@ -171,14 +175,13 @@ function generateHtml(){
         </div>
         </div>`
 
-        fs.appendFile('output/team-profile.html', internHtml, 'utf8', function (error) {
+        fs.appendFile('Develop/output/team-profile.html', internHtml, 'utf8', function (error) {
             if (error) {
                 console.log(error)
             }
         });
     }
 }
-
 function htmlHead(){
     const htmlHead = `<!DOCTYPE html>
     <html lang="en">
@@ -190,17 +193,19 @@ function htmlHead(){
         <title>Team Profile</title>
     </head>
     <body>
-    <header style="width: 100%; background-color: grey; height: 50px;">
+    <header style="width: 100%; background-color: blue; height: 50px;">
     <h2 style="text-align: center;">Developer Team</h2>
     </header>
     <div class="container d-flex justify-content-center">`
 
-    fs.appendFile('output/team-profile.html', htmlHead, 'utf8', function (error) {
+    fs.appendFile('Develop/output/team-profile.html', htmlHead, 'utf8', function (error) {
         if (error) {
             console.log(error)
         }
     });
 }
+
+
 
 
 if(statusSwitch === 1){
