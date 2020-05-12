@@ -1,0 +1,23 @@
+{
+  "name": "team-profile-generater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcancel91/team-profile-generater.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcancel91/team-profile-generater/issues"
+  },
+  "homepage": "https://github.com/bcancel91/team-profile-generater#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "inquirer": "^7.1.0"
+  }
+}
