@@ -79,6 +79,7 @@ async function addMoreEmployeesFunc(){
     if(checkStatus.addConfirm === "No"){
         statusSwitch = 0;
      console.log("Generate HTML")
+     
      generateHtml()   
     }
 }
@@ -111,6 +112,7 @@ const addMoreEmployees = {
 
 function generateHtml(){
     htmlHead();
+ 
     for(let i = 0; i < managerArray.length; i++){
        const managerHtml = `<div class="card" style="width: 300px">
         <div class="card-header text-white bg-dark">
@@ -204,6 +206,7 @@ function htmlHead(){
         }
     });
 }
+
 
 
 
